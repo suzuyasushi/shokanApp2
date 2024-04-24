@@ -1,0 +1,104 @@
+th,td {
+  border: solid 1px; 
+  padding: 10px;     
+}
+
+
+table {
+  border-collapse:  collapse; 
+}
+
+#table2{
+  display: flex;
+  align-items: flex-start;
+}
+
+#positionTable{
+  margin: 100px;
+}
+
+#filterTable{
+  margin: 0 100px;
+}
+
+#search1{
+  background-color: aqua;
+}
+
+#search2{
+  background-color: rgb(138, 242, 176);
+}
+#search3{
+  background-color: rgb(237, 155, 225);
+}
+
+#inputCompanyName{
+  margin: 0 10px;
+}
+
+#tableSpot{
+  display: flex;
+  align-items: flex-start;
+}
+
+
+
+#tableNotRead{
+  display: flex;
+  align-items: flex-start;
+}
+
+#filterCompanyNotRead{
+  margin: 0 10px;
+}
+
+#search1NotRead{
+  background-color: aqua;
+}
+
+#search2NotRead{
+  background-color: rgb(138, 242, 176);
+}
+#search3NotRead{
+  background-color: rgb(237, 155, 225);
+}
+
+#inputCompanyNameNotRead{
+  margin: 0 10px;
+}
+
+#filterTableNotRead{
+  margin: 0 100px;
+}
+
+#tableCompanyName{
+  text-align: center
+}
+
+body{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin:40px 0px;
+  font-size: 25px;
+}
+/* 
+.fontSize{
+  font-size: 20px;
+}
+
+#T旭川{
+  font-size: 20px;
+} 
+#P旭川{
+  font-size: 20px;
+} 
+#P北見{
+  font-size: 20px;
+} 
+#C道北{
+  font-size: 20px;
+} 
+#C旭川{
+  font-size: 20px;
+}  */
