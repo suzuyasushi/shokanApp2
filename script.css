@@ -71,34 +71,51 @@ table {
   margin: 0 100px;
 }
 
-#tableCompanyName{
+.tableCompanyName{
   text-align: center
 }
 
 body{
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin:40px 0px;
-  font-size: 25px;
-}
-/* 
-.fontSize{
+  margin:40px 0px; */
   font-size: 20px;
 }
 
-#T旭川{
+#makeArray{
   font-size: 20px;
-} 
-#P旭川{
+}
+#delete{
   font-size: 20px;
-} 
-#P北見{
+}
+
+#allReader{
   font-size: 20px;
-} 
-#C道北{
+}
+#代{
   font-size: 20px;
-} 
-#C旭川{
+}
+#営{
   font-size: 20px;
-}  */
+}
+#管{
+  font-size: 20px;
+}
+#新{
+  font-size: 20px;
+}
+#サ{
+  font-size: 20px;
+}
+#人労{
+  font-size: 20px;
+}
+
+#tablePosition{
+  display: flex;
+  margin:40px 0px;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 25px;
+}
