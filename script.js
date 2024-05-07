@@ -94,10 +94,16 @@ const position = [
     "T茨城",  "T栃木",  "T群馬",  "T新潟",  "T山梨",  "P茨城",  "P栃木",  "P群馬",  "P新潟",  "P山梨",  "C新茨城",  "C南茨城",  "C栃木",  "C群馬",  "C高崎",  "C新潟",  "C北越",  "C山梨",  "N茨城",  "N水戸",  "Nつくば",  "N栃木",  "N群馬",  "N高崎",  "N新潟",  "N越後",  "N山梨",  "N甲斐"
   ]
   const companiesInMinamikanto = [
-     "T埼玉",  "T千葉",  "TM東京",  "T神奈川",  "P埼玉",  "P千葉",  "WT神奈川",  "C埼玉",  "C新埼玉",  "C千葉",  "N東埼玉",  "N埼玉",  "N千葉",  "N東都","P東京(TM東京)","C西東京(SD西東京)","N多摩(SD西東京)"
+     "T埼玉",  "T千葉",  "TM東京",  "T神奈川",  "P埼玉",  "P千葉",  "WT神奈川",  "C埼玉",  "C新埼玉",  "C千葉",  "N東埼玉",  "N埼玉",  "N千葉",  "N東都"
+    //  ,"P東京(TM東京)"
+     ,"C西東京(SD西東京)","N多摩(SD西東京)"
     ];
   const companiesInChubu = [ 
-    "TM富山",  "T石川",  "T福井",  "T長野",  "T岐阜",  "T静岡",  "T愛知W",  "T三重",  "PC石川",  "P福井",  "P岐阜",  "TU静岡",  "P名古屋",  "P三重",  "C富山",  "C福井",  "NTP信州",  "C静岡",  "TM中京",  "C愛知",  "C名古屋",  "C三重",  "N富山",  "N石川",  "N福井",  "CN岐阜",  "N静岡",   "N静浜",   "T愛知E",  "N中部",  "TM東名古屋",  "N三重",  "Nノヴェル三重","C東海(TU静岡)","C愛豊(T愛知)","Nスルガ(TU静岡)","N浜松(T静岡)","N愛知(T愛知)"
+    "TM富山",  "T石川",  "T福井",  "T長野",  "T岐阜",  "T静岡",  "T愛知W",  "T三重",  "PC石川",  "P福井",  "P岐阜",  "TU静岡",  "P名古屋",  "P三重",  "C富山",  "C福井",  "NTP信州",  "C静岡",  "TM中京",  "C愛知",  "C名古屋",  "C三重",  "N富山",  "N石川",  "N福井",  "CN岐阜",  "N静岡",   "N静浜",   "T愛知E",  "N中部",  "TM東名古屋",  "N三重",  "Nノヴェル三重","C東海(TU静岡)"
+    // ,"C愛豊(T愛知)"
+    ,"Nスルガ(TU静岡)"
+    ,"N浜松(T静岡)"
+    // ,"N愛知(T愛知)"
   ];
   const companiesInKinki = [
      "T滋賀",  "T京都",  "T大阪",  "T兵庫",  "T奈良",  "T和歌山",  "TM滋賀",  "P京都",  "P大阪",  "P神戸",  "TU奈良",  "P和歌山",  "C滋賀",  "C京都",  "C南海",  "C大阪",  "TM新大阪",  "C神戸",  "C姫路",  "C兵庫",  "C和歌山",  "N滋賀（T滋賀）",   "Nびわこ",  "N京都",  "N京華",  "Nヤサカ",  "Nニューリー北大阪",  "N大阪",  "N南海",  "N神戸",  "Nゾナ神戸",  "N兵庫",  "Nウエスト兵庫",  "N和歌山"
@@ -142,6 +148,7 @@ function changeButtonFont(){
 }
 changeButtonFont();
 
+
 //cssデータ読み込み→配列に変換
 function makeArray(){
   let innerSearchWords = document.getElementById("inputbox").value;
@@ -158,7 +165,7 @@ function makeArray(){
       console.log( commonCompany.length)
       document.getElementById("countCompanies").innerText = `・書簡を見た販売店数 : ${commonCompany.length}社`
       //書簡をみていない販売店数
-      const differentCompanies = 240 - commonCompany.length
+      const differentCompanies =  companiesInHokkaido.length + companiesInTohoku.length + companiesInKitakanto.length + companiesInMinamikanto.length + companiesInChubu.length + companiesInKinki.length + companiesInChushikoku.length + companiesInKyusyu.length- commonCompany.length
       document.getElementById("countNotRead").innerText = `・書簡を見ていない販売店数 : ${differentCompanies}社`
 
       const commonCompanyInformation = []; 
@@ -204,6 +211,7 @@ function allReader() {
   }
   document.getElementById("position").innerText = commonPositionInformation.join('\n');
 }
+
 
  //ボタン押し→会社名、氏名、役割のみ返す
 function pushButton(name){
