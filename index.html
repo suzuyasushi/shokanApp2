@@ -15,14 +15,74 @@
      <input type = "text" name = "searchWords" id ="inputbox">
      <button id="makeArray" onclick="makeArray()">実行</button>
    </div>
+
+   <div id=" box2">
+    <h4 >・役割検索 </h4>
   <table>
-    <h4 id="countCompanies"></h4>
-    <h4 id="countNotRead" ></h4>
+    <tbody>
+    <tr>
+      <th id="positionTable">役割</th>
+      <td>
+        <button id="代" onclick=" commonPositionSelection(`代`)">代表者</button>
+      　<button id="営" onclick=" commonPositionSelection(`営`)">営本長</button>
+      　<button id="管" onclick=" commonPositionSelection(`管`)">管本長</button>
+      　<button id="新" onclick=" commonPositionSelection(`新`)">新担責</button>
+      　<button id="サ" onclick=" commonPositionSelection(`サ`)">サ担責</button>
+      　<button id="人労" onclick=" commonPositionSelection(`人労`)">人労担当</button>
+    </td>   
+  </tr>
+  </tbody>
+  </table>
+  
+  <h4>・既読者表示</h4>
+  <div id="table2">
+    <table>
+      <tr>
+        <th id="search1" colspan="3"> <button id="allReader" onclick="allReader() ">全表示</button>
+        </th>
+      </tr>
+      <tr>
+        <th>販売店名</th><th>氏名</th> <th>役割</th>
+      </tr>
+      <tr>
+        <td id="company"></td ><td id="name"></td><td id="position"></td>
+      </table>
+      <table id="filterTable" > 
+        <tr>
+          <th id="search2"　 colspan="3">販売店検索</th>
+        </tr>
+        <tr>
+          <th>販売店名</th><th>氏名</th> <th>役割</th>
+        </tr>
+        <tr>
+          <td id="company2"></td ><td id="name2"></td><td id="position2"></td>
+          
+          
+          <table id="filterPositionTable" > 
+            <tr>
+              <th id="search3" colspan="3">役割検索</th>
+            </tr>
+            <tr>
+              <th>販売店名</th><th>氏名</th> <th>役割</th>
+            </tr>
+            <tr>
+              <td id="company3"></td ><td id="name3"></td><td id="position3"></td>
+        </table>
+      </table>
+      
+    </div>
+  </div>
+  
+  <h4 id="countCompanies"></h4>
+  <h4 id="countNotRead" ></h4>
+ <div id="tablePosition"> 
+ <div>
+  <table>
     <tbody class="fontSize">
       <tr>
         <td>地域</td>
         <td>都道府県</td>
-        <td id="tableCompanyName">販売店名</td>
+        <td class="tableCompanyName">販売店名</td>
         
       </tr>
       <tr>
@@ -194,7 +254,7 @@
       <tr>
         <th>東京</th>
         <td><button id="TM東京" onclick="pushButton(`TM東京`)">TM東京</button>
-            <button id="P東京(TM東京)" onclick="pushButton(`P東京(TM東京)`)">P東京(TM東京)</button>
+            <!-- <button id="P東京(TM東京)" onclick="pushButton(`P東京(TM東京)`)">P東京(TM東京)</button> -->
           　<button id="C西東京(SD西東京)" onclick="pushButton(`C西東京(SD西東京)`)">C西東京(SD西東京)</button>
           　<button id="N東都" onclick="pushButton(`N東都`)">N東都</button>
           　<button id="N多摩(SD西東京)" onclick="pushButton(`N多摩(SD西東京)`)">N多摩(SD西東京)</button>
@@ -258,8 +318,8 @@
           　<button id="TM中京" onclick="pushButton(`TM中京`)">TM中京</button>
           　<button id="C愛知" onclick="pushButton(`C愛知`)">C愛知</button>
           　<button id="C名古屋" onclick="pushButton(`C名古屋`)">C名古屋</button>
-          　<button id="C愛豊(T愛知)" onclick="pushButton(`C愛豊(T愛知)`)">C愛豊(T愛知)</button>
-          　<button id="N愛知(T愛知)" onclick="pushButton(`N愛知(T愛知)`)">N愛知(T愛知)</button>
+          <!-- 　<button id="C愛豊(T愛知)" onclick="pushButton(`C愛豊(T愛知)`)">C愛豊(T愛知)</button>
+          　<button id="N愛知(T愛知)" onclick="pushButton(`N愛知(T愛知)`)">N愛知(T愛知)</button> -->
           　<button id="T愛知E" onclick="pushButton(`T愛知E`)">T愛知E</button>
           　<button id="N中部" onclick="pushButton(`N中部`)">N中部</button>
           　<button id="TM東名古屋" onclick="pushButton(`TM東名古屋`)">TM東名古屋</button>
@@ -274,6 +334,20 @@
           　<button id="Nノヴェル三重" onclick="pushButton(`Nノヴェル三重`)">Nノヴェル三重</button>
       </tr>  
 
+     
+      
+    </tbody>
+  </table>
+ </div>
+ <div>
+  <table>
+  <tbody class="fontSize">
+    <tr>
+      <td>地域</td>
+      <td>都道府県</td>
+      <td class="tableCompanyName">販売店名</td>
+      
+    </tr>
       <th rowspan="6">近畿</th>
       <th>滋賀</th>
       <td><button id="T滋賀" onclick="pushButton(`T滋賀`)">T滋賀</button>
@@ -300,7 +374,7 @@
         　<button id="C南海" onclick="pushButton(`C南海`)">C南海</button>
         　<button id="C大阪" onclick="pushButton(`C大阪`)">C大阪</button>
         　<button id="TM新大阪" onclick="pushButton(`TM新大阪`)">TM新大阪</button>
-        　<button id="Nニューリー北大阪" onclick="pushButton(`Nニューリー北大阪`)">Nニューリー北大阪</button>
+        　<button id="Nニューリー北大阪" onclick="pushButton(`Nニューリー北大阪`)">NN北大阪</button>
         　<button id="N大阪" onclick="pushButton(`N大阪`)">N大阪</button>
         　<button id="N南海" onclick="pushButton(`N南海`)">N南海</button>
       </td>
@@ -490,7 +564,9 @@
     </tbody>
   </table>
 </div>
-<div id=" box2">
+</div>
+</div>
+<!-- <div id=" box2">
   <h4 >・役割検索 </h4>
 <table>
   <tbody>
@@ -544,7 +620,7 @@
     </table>
     
   </div>
-</div>
+</div> -->
 <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
