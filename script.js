@@ -266,10 +266,11 @@ function allReader() {
   let searchWordsReplaceN =  searchWordsReplaceC.replaceAll(` N`, ',N');
   let searchWordsReplaceW =  searchWordsReplaceN.replaceAll(` W`, ',W');
   let searchWordsReplaceL =  searchWordsReplaceW.replaceAll(` L`, ',L');
+  let searchWordsReplaceToyota =  searchWordsReplaceL.replaceAll(` トヨタ`, ',トヨタ');
 //店舗名、氏名のスペースを消した配列
-  let searchWordsNoSpace =  searchWordsReplaceL.replace(/\s+/g, '').split(',');
+  let searchWordsNoSpace =  searchWordsReplaceToyota.replace(/\s+/g, '').split(',');
 
-  let arrayOfSearchWords =  searchWordsReplaceL.split(',');
+  let arrayOfSearchWords =  searchWordsReplaceToyota.split(',');
 //店舗名と氏名をそれぞれ別の要素にする
 //店舗名と氏名の間に,が入った配列を作成
   const divideCompanyAndName = [];
@@ -357,10 +358,11 @@ function pushButton(name){
   let searchWordsReplaceN =  searchWordsReplaceC.replaceAll(` N`, ',N');
   let searchWordsReplaceW =  searchWordsReplaceN.replaceAll(` W`, ',W');
   let searchWordsReplaceL =  searchWordsReplaceW.replaceAll(` L`, ',L');
+  let searchWordsReplaceToyota =  searchWordsReplaceL.replaceAll(` トヨタ`, ',トヨタ');
 //店舗名、氏名のスペースを消した配列
-  let searchWordsNoSpace =  searchWordsReplaceL.replace(/\s+/g, '').split(',');
+  let searchWordsNoSpace =  searchWordsReplaceToyota.replace(/\s+/g, '').split(',');
 
-  let arrayOfSearchWords =  searchWordsReplaceL.split(',');
+  let arrayOfSearchWords =  searchWordsReplaceToyota.split(',');
 //店舗名と氏名をそれぞれ別の要素にする
 //店舗名と氏名の間に,が入った配列を作成
   const divideCompanyAndName = [];
@@ -483,10 +485,11 @@ function  commonPositionSelection(positionName) {
   let searchWordsReplaceN =  searchWordsReplaceC.replaceAll(` N`, ',N');
   let searchWordsReplaceW =  searchWordsReplaceN.replaceAll(` W`, ',W');
   let searchWordsReplaceL =  searchWordsReplaceW.replaceAll(` L`, ',L');
+  let searchWordsReplaceToyota =  searchWordsReplaceL.replaceAll(` トヨタ`, ',トヨタ');
 //店舗名、氏名のスペースを消した配列
-  let searchWordsNoSpace =  searchWordsReplaceL.replace(/\s+/g, '').split(',');
+  let searchWordsNoSpace =  searchWordsReplaceToyota.replace(/\s+/g, '').split(',');
 
-  let arrayOfSearchWords =  searchWordsReplaceL.split(',');
+  let arrayOfSearchWords =  searchWordsReplaceToyota.split(',');
 //店舗名と氏名をそれぞれ別の要素にする
 //店舗名と氏名の間に,が入った配列を作成
   const divideCompanyAndName = [];
