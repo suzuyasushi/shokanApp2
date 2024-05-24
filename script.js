@@ -131,7 +131,12 @@ const position = [
   //マスターインフォメーション(終)
 
 
-
+  
+  const reload =document.getElementById("reload");
+  reload.addEventListener("click",function(){
+      window.location.reload();
+  }
+);
 
 //ボタンの文字の大きさを変える
 function changeButtonFont(){
@@ -172,11 +177,12 @@ function makeArray(){
   let searchWordsReplaceN =  searchWordsReplaceC.replaceAll(` N`, ',N');
   let searchWordsReplaceW =  searchWordsReplaceN.replaceAll(` W`, ',W');
   let searchWordsReplaceL =  searchWordsReplaceW.replaceAll(` L`, ',L');
+  let searchWordsReplaceU =  searchWordsReplaceL.replaceAll(` U`, ',U');
 
 //店舗名、氏名のスペースを消した配列
-  let searchWordsNoSpace =  searchWordsReplaceL.replace(/\s+/g, '').split(',');
+  let searchWordsNoSpace =  searchWordsReplaceU.replace(/\s+/g, '').split(',');
 
-  let arrayOfSearchWords =  searchWordsReplaceL.split(',');
+  let arrayOfSearchWords =  searchWordsReplaceU.split(',');
 //店舗名と氏名をそれぞれ別の要素にする
 //店舗名と氏名の間に,が入った配列を作成
   const divideCompanyAndName = [];
@@ -249,12 +255,80 @@ console.log(searchWordsNoSpace);
            document.getElementById(value).style.backgroundColor = "orange";
           }
         }
+
+        console.log(arrayOfSearchCompany);
+        console.log(commonCompany);
         // for(const value of commonCompanyInformation){
         //   if(document.getElementById(value)){
         //    document.getElementById(value).style.backgroundColor = "orange";
         //   }
         // }
       }   
+
+  
+
+// //表示・非表示機能実装
+// function display(){
+// document.getElementById("company").style.display ="none";
+// document.getElementById("name").style.display ="none";
+// document.getElementById("position").style.display ="none";
+// document.getElementById("company4").style.display ="none";
+// document.getElementById("name4").style.display ="none";
+// document.getElementById("position4").style.display ="none";
+
+
+// const p1 = document.getElementById("company");
+// if(p1.style.display=="block"){
+//   // noneで非表示
+//   p1.style.display ="none";
+// }else{
+//   // blockで表示
+//   p1.style.display ="block";
+// }
+
+// const p2 = document.getElementById("name");
+// if(p2.style.display=="block"){
+//   // noneで非表示
+//   p2.style.display ="none";
+// }else{
+//   // blockで表示
+//   p2.style.display ="block";
+// }
+// const p3 = document.getElementById("position");
+// if(p3.style.display=="block"){
+//   // noneで非表示
+//   p3.style.display ="none";
+// }else{
+//   // blockで表示
+//   p3.style.display ="block";
+// }
+// const p4 = document.getElementById("company4");
+// if(p4.style.display=="block"){
+//   // noneで非表示
+//   p4.style.display ="none";
+// }else{
+//   // blockで表示
+//   p1.style.display ="block";
+// }
+
+// const p5 = document.getElementById("name4");
+// if(p5.style.display=="block"){
+//   // noneで非表示
+//   p5.style.display ="none";
+// }else{
+//   // blockで表示
+//   p5.style.display ="block";
+// }
+// const p6 = document.getElementById("position4");
+// if(p6.style.display=="block"){
+//   // noneで非表示
+//   p6.style.display ="none";
+// }else{
+//   // blockで表示
+//   p6.style.display ="block";
+// }
+// }
+
 
 //全体　既読者の会社のみ返す    
 function allReader() {
@@ -266,7 +340,14 @@ function allReader() {
   let searchWordsReplaceN =  searchWordsReplaceC.replaceAll(` N`, ',N');
   let searchWordsReplaceW =  searchWordsReplaceN.replaceAll(` W`, ',W');
   let searchWordsReplaceL =  searchWordsReplaceW.replaceAll(` L`, ',L');
-  let searchWordsReplaceToyota =  searchWordsReplaceL.replaceAll(` トヨタ`, ',トヨタ');
+  let searchWordsReplaceU =  searchWordsReplaceL.replaceAll(` U`, ',U');
+  let searchWordsReplaceR =  searchWordsReplaceU.replaceAll(` R`, ',R');
+  let searchWordsReplaceK =  searchWordsReplaceR.replaceAll(` K`, ',K');
+  let searchWordsReplaceS =  searchWordsReplaceK.replaceAll(` S`, ',S');
+  let searchWordsReplaceJ =  searchWordsReplaceS.replaceAll(` J`, ',J');
+  let searchWordsReplaceHigashi =  searchWordsReplaceJ.replaceAll(` 東かがわ`, ',東かがわ');
+  let searchWordsReplaceHidaka =  searchWordsReplaceHigashi.replaceAll(` ひだか`, ',ひだか');
+  let searchWordsReplaceToyota =  searchWordsReplaceHidaka.replaceAll(` トヨタ`, ',トヨタ');
 //店舗名、氏名のスペースを消した配列
   let searchWordsNoSpace =  searchWordsReplaceToyota.replace(/\s+/g, '').split(',');
 
@@ -358,7 +439,14 @@ function pushButton(name){
   let searchWordsReplaceN =  searchWordsReplaceC.replaceAll(` N`, ',N');
   let searchWordsReplaceW =  searchWordsReplaceN.replaceAll(` W`, ',W');
   let searchWordsReplaceL =  searchWordsReplaceW.replaceAll(` L`, ',L');
-  let searchWordsReplaceToyota =  searchWordsReplaceL.replaceAll(` トヨタ`, ',トヨタ');
+  let searchWordsReplaceU =  searchWordsReplaceL.replaceAll(` U`, ',U');
+  let searchWordsReplaceR =  searchWordsReplaceU.replaceAll(` R`, ',R');
+  let searchWordsReplaceK =  searchWordsReplaceR.replaceAll(` K`, ',K');
+  let searchWordsReplaceS =  searchWordsReplaceK.replaceAll(` S`, ',S');
+  let searchWordsReplaceJ =  searchWordsReplaceS.replaceAll(` J`, ',J');
+  let searchWordsReplaceHigashi =  searchWordsReplaceJ.replaceAll(` 東かがわ`, ',東かがわ');
+  let searchWordsReplaceHidaka =  searchWordsReplaceHigashi.replaceAll(` ひだか`, ',ひだか');
+  let searchWordsReplaceToyota =  searchWordsReplaceHidaka.replaceAll(` トヨタ`, ',トヨタ');
 //店舗名、氏名のスペースを消した配列
   let searchWordsNoSpace =  searchWordsReplaceToyota.replace(/\s+/g, '').split(',');
 
@@ -415,7 +503,7 @@ for(let j = 0; j < arrayOfSearchName.length; j ++){
 //ボタン押し→会社名のみ返す
 const commonCompanyfileter = []; 
 for(const companyName of commonCompanyInformation){
-if(companyName.includes(name)){
+if(companyName === name){
   commonCompanyfileter.push(companyName);
 }
 document.getElementById("company2").innerText = commonCompanyfileter.join('\n');
@@ -423,7 +511,7 @@ document.getElementById("company2").innerText = commonCompanyfileter.join('\n');
 
 const commonCompanyfileter2 = []; 
 for(const companyName of commonCompanyInformation2){
-if(companyName.includes(name)){
+if(companyName=== name){
   commonCompanyfileter2.push(companyName);
 }
 document.getElementById("company5").innerText = commonCompanyfileter2.join('\n');
@@ -485,7 +573,14 @@ function  commonPositionSelection(positionName) {
   let searchWordsReplaceN =  searchWordsReplaceC.replaceAll(` N`, ',N');
   let searchWordsReplaceW =  searchWordsReplaceN.replaceAll(` W`, ',W');
   let searchWordsReplaceL =  searchWordsReplaceW.replaceAll(` L`, ',L');
-  let searchWordsReplaceToyota =  searchWordsReplaceL.replaceAll(` トヨタ`, ',トヨタ');
+  let searchWordsReplaceU =  searchWordsReplaceL.replaceAll(` U`, ',U');
+  let searchWordsReplaceR =  searchWordsReplaceU.replaceAll(` R`, ',R');
+  let searchWordsReplaceK =  searchWordsReplaceR.replaceAll(` K`, ',K');
+  let searchWordsReplaceS =  searchWordsReplaceK.replaceAll(` S`, ',S');
+  let searchWordsReplaceJ =  searchWordsReplaceS.replaceAll(` J`, ',J');
+  let searchWordsReplaceHigashi =  searchWordsReplaceJ.replaceAll(` 東かがわ`, ',東かがわ');
+  let searchWordsReplaceHidaka =  searchWordsReplaceHigashi.replaceAll(` ひだか`, ',ひだか');
+  let searchWordsReplaceToyota =  searchWordsReplaceHidaka.replaceAll(` トヨタ`, ',トヨタ');
 //店舗名、氏名のスペースを消した配列
   let searchWordsNoSpace =  searchWordsReplaceToyota.replace(/\s+/g, '').split(',');
 
