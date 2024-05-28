@@ -131,12 +131,7 @@ const position = [
   //マスターインフォメーション(終)
 
 
-  
-  const reload =document.getElementById("reload");
-  reload.addEventListener("click",function(){
-      window.location.reload();
-  }
-);
+
 
 //ボタンの文字の大きさを変える
 function changeButtonFont(){
@@ -166,6 +161,12 @@ function changeButtonFont(){
   }
 }
 changeButtonFont();
+
+// //リロードボタン追加
+const reload =document.getElementById("reload");
+reload.addEventListener("click",function(){
+    window.location.reload();
+});
 
 
 //cssデータ読み込み→配列に変換
@@ -239,10 +240,24 @@ console.log(searchWordsNoSpace);
       const commonCompany= Array.from(new Set(arrayOfSearchCompany));
       // const commonCompany= Array.from(new Set(commonCompanies));
       console.log( commonCompany.length)
-      document.getElementById("countCompanies").innerText = `・書簡を見た販売店数 : ${commonCompany.length}社`
+      console.log( commonCompany)
+      
+      //既読者からTMPとかを除く
+      const filterCommonCompany = [];
+      for(const companyName of commonCompany){
+        if(companyInformation.includes(companyName)){
+          filterCommonCompany.push(companyName);
+        }
+      }
+      console.log(filterCommonCompany.length)
+      console.log(filterCommonCompany)
+
+      document.getElementById("countCompanies").innerText = `・書簡を見た販売店数 : ${filterCommonCompany.length}社`
       //書簡をみていない販売店数
-      const differentCompanies =  companiesInHokkaido.length + companiesInTohoku.length + companiesInKitakanto.length + companiesInMinamikanto.length + companiesInChubu.length + companiesInKinki.length + companiesInChushikoku.length + companiesInKyusyu.length- commonCompany.length
+      const differentCompanies =  companiesInHokkaido.length + companiesInTohoku.length + companiesInKitakanto.length + companiesInMinamikanto.length + companiesInChubu.length + companiesInKinki.length + companiesInChushikoku.length + companiesInKyusyu.length- filterCommonCompany.length
       document.getElementById("countNotRead").innerText = `・書簡を見ていない販売店数 : ${differentCompanies}社`
+
+      console.log(differentCompanies);
 
       const commonCompanyInformation = []; 
         for (let i = 0; i < masterInformationNoSpace.length; i++) {
@@ -255,80 +270,7 @@ console.log(searchWordsNoSpace);
            document.getElementById(value).style.backgroundColor = "orange";
           }
         }
-
-        console.log(arrayOfSearchCompany);
-        console.log(commonCompany);
-        // for(const value of commonCompanyInformation){
-        //   if(document.getElementById(value)){
-        //    document.getElementById(value).style.backgroundColor = "orange";
-        //   }
-        // }
       }   
-
-  
-
-// //表示・非表示機能実装
-// function display(){
-// document.getElementById("company").style.display ="none";
-// document.getElementById("name").style.display ="none";
-// document.getElementById("position").style.display ="none";
-// document.getElementById("company4").style.display ="none";
-// document.getElementById("name4").style.display ="none";
-// document.getElementById("position4").style.display ="none";
-
-
-// const p1 = document.getElementById("company");
-// if(p1.style.display=="block"){
-//   // noneで非表示
-//   p1.style.display ="none";
-// }else{
-//   // blockで表示
-//   p1.style.display ="block";
-// }
-
-// const p2 = document.getElementById("name");
-// if(p2.style.display=="block"){
-//   // noneで非表示
-//   p2.style.display ="none";
-// }else{
-//   // blockで表示
-//   p2.style.display ="block";
-// }
-// const p3 = document.getElementById("position");
-// if(p3.style.display=="block"){
-//   // noneで非表示
-//   p3.style.display ="none";
-// }else{
-//   // blockで表示
-//   p3.style.display ="block";
-// }
-// const p4 = document.getElementById("company4");
-// if(p4.style.display=="block"){
-//   // noneで非表示
-//   p4.style.display ="none";
-// }else{
-//   // blockで表示
-//   p1.style.display ="block";
-// }
-
-// const p5 = document.getElementById("name4");
-// if(p5.style.display=="block"){
-//   // noneで非表示
-//   p5.style.display ="none";
-// }else{
-//   // blockで表示
-//   p5.style.display ="block";
-// }
-// const p6 = document.getElementById("position4");
-// if(p6.style.display=="block"){
-//   // noneで非表示
-//   p6.style.display ="none";
-// }else{
-//   // blockで表示
-//   p6.style.display ="block";
-// }
-// }
-
 
 //全体　既読者の会社のみ返す    
 function allReader() {
@@ -429,6 +371,23 @@ console.log(commonPositionInformation);
   document.getElementById("position").innerText =  commonPositionInformation.join('\n');
 }
 
+
+function notLooking(){
+  const commonCompanyInformation = [];  
+  document.getElementById("company").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("company2").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("company3").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("company4").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("name").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("name2").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("name3").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("name4").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("position").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("position2").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("position3").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("position4").innerText =  commonCompanyInformation.join('\n');
+}
+
 function pushButton(name){
   //ボタン押し→会社名のみ返す
   let innerSearchWords = document.getElementById("inputbox").value;
@@ -503,7 +462,7 @@ for(let j = 0; j < arrayOfSearchName.length; j ++){
 //ボタン押し→会社名のみ返す
 const commonCompanyfileter = []; 
 for(const companyName of commonCompanyInformation){
-if(companyName === name){
+if(companyName.includes(name)){
   commonCompanyfileter.push(companyName);
 }
 document.getElementById("company2").innerText = commonCompanyfileter.join('\n');
@@ -511,7 +470,7 @@ document.getElementById("company2").innerText = commonCompanyfileter.join('\n');
 
 const commonCompanyfileter2 = []; 
 for(const companyName of commonCompanyInformation2){
-if(companyName=== name){
+if(companyName.includes(name)){
   commonCompanyfileter2.push(companyName);
 }
 document.getElementById("company5").innerText = commonCompanyfileter2.join('\n');
