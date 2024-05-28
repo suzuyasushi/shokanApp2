@@ -111,6 +111,12 @@ body{
 #人労{
   font-size: 20px;
 }
+#allReaderNotDisplay{
+  font-size: 20px;
+}
+#reload{
+  font-size: 20px;
+}
 
 #tablePosition{
   display: flex;
@@ -119,3 +125,9 @@ body{
   justify-content: space-around;
   font-size: 25px;
 }
+
+
+
+/* .displayOrHidden{
+  display: flex;
+} */
