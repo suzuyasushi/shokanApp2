@@ -378,14 +378,17 @@ function notLooking(){
   document.getElementById("company2").innerText =  commonCompanyInformation.join('\n');
   document.getElementById("company3").innerText =  commonCompanyInformation.join('\n');
   document.getElementById("company4").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("company5").innerText =  commonCompanyInformation.join('\n');
   document.getElementById("name").innerText =  commonCompanyInformation.join('\n');
   document.getElementById("name2").innerText =  commonCompanyInformation.join('\n');
   document.getElementById("name3").innerText =  commonCompanyInformation.join('\n');
   document.getElementById("name4").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("name5").innerText =  commonCompanyInformation.join('\n');
   document.getElementById("position").innerText =  commonCompanyInformation.join('\n');
   document.getElementById("position2").innerText =  commonCompanyInformation.join('\n');
   document.getElementById("position3").innerText =  commonCompanyInformation.join('\n');
   document.getElementById("position4").innerText =  commonCompanyInformation.join('\n');
+  document.getElementById("position5").innerText =  commonCompanyInformation.join('\n');
 }
 
 function pushButton(name){
