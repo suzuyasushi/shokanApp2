@@ -1,28 +1,34 @@
 th,td {
   border: solid 1px; 
-  padding: 10px;     
+  padding: 10px; 
+  white-space: nowrap    
 }
 
 
 table {
-  border-collapse:  collapse; 
+  border-collapse:  collapse;
+  white-space: nowrap 
 }
 
 #table2{
   display: flex;
   align-items: flex-start;
+  white-space: nowrap
 }
 
 #positionTable{
   margin: 100px;
+  white-space: nowrap
 }
 
 #filterTable{
   margin: 0 100px;
+  white-space: nowrap
 }
 
 #search1{
   background-color: aqua;
+  white-space: nowrap
 }
 
 #search2{
@@ -34,11 +40,13 @@ table {
 
 #inputCompanyName{
   margin: 0 10px;
+  white-space: nowrap
 }
 
 #tableSpot{
   display: flex;
   align-items: flex-start;
+  white-space: nowrap
 }
 
 
@@ -46,10 +54,12 @@ table {
 #tableNotRead{
   display: flex;
   align-items: flex-start;
+  white-space: nowrap
 }
 
 #filterCompanyNotRead{
   margin: 0 10px;
+  white-space: nowrap
 }
 
 #search1NotRead{
@@ -65,14 +75,17 @@ table {
 
 #inputCompanyNameNotRead{
   margin: 0 10px;
+  white-space: nowrap
 }
 
 #filterTableNotRead{
   margin: 0 100px;
+  white-space: nowrap
 }
 
 .tableCompanyName{
   text-align: center
+  
 }
 
 body{
@@ -81,6 +94,7 @@ body{
   justify-content: space-around;
   margin:40px 0px; */
   font-size: 20px;
+  white-space: nowrap
 }
 
 #makeArray{
@@ -127,7 +141,13 @@ body{
 }
 
 
+#inputbox{
+width: 600px;
+height: 50px;
+font-size: 20px;
+}
 
-/* .displayOrHidden{
-  display: flex;
-} */
+/* #inputbox{
+      color:#666; 
+  } */
+  
