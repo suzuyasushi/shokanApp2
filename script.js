@@ -162,6 +162,16 @@ function changeButtonFont(){
 }
 changeButtonFont();
 
+//検索窓に文字入力
+// function placeholders(){
+//       var obj = document.getElementById("placeholder");
+//       if(obj.value == 'キーワードを入力'){
+//           obj.value = "";
+//           obj.style.color = '#000';
+//       }
+//   }
+  
+
 // //リロードボタン追加
 const reload =document.getElementById("reload");
 reload.addEventListener("click",function(){
@@ -371,7 +381,7 @@ console.log(commonPositionInformation);
   document.getElementById("position").innerText =  commonPositionInformation.join('\n');
 }
 
-
+//非表示ボタン実装
 function notLooking(){
   const commonCompanyInformation = [];  
   document.getElementById("company").innerText =  commonCompanyInformation.join('\n');
@@ -391,6 +401,7 @@ function notLooking(){
   document.getElementById("position5").innerText =  commonCompanyInformation.join('\n');
 }
 
+//販売店検索
 function pushButton(name){
   //ボタン押し→会社名のみ返す
   let innerSearchWords = document.getElementById("inputbox").value;
@@ -522,6 +533,7 @@ if(commonCompanyInformation[i] === name){
 document.getElementById("position2").innerText =  commonPositionfileter.join('\n');
 }
 }
+
 
 //役割検索
 //ボタン→会社名のみ返す
