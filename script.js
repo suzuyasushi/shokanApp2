@@ -117,7 +117,7 @@ const position = [
 
   const companiesInChubu = [ 
     "TM富山",  "T石川",  "T福井",  "T長野",  "T岐阜",  "T静岡",  "T愛知W",  "T三重",  "PC石川",  "P福井",  "P岐阜",  "TU静岡",  "P名古屋",  "P三重",  "C富山",  "C福井",  "NTP信州",  "C静岡",  "TM中京",  "C愛知",  "C名古屋",  "C三重",  "N富山",  "N石川",  "N福井",  "CN岐阜",  "N静岡",   "N静浜",   "T愛知E",  "N中部",  "TM東名古屋",  "N三重",  "Nノヴェル三重","C東海(TU静岡)"
-    ,"C愛豊(T愛知)"  ,"Nスルガ(TU静岡)"  ,"N浜松(T静岡)"  ,"N愛知(T愛知)"
+    ,"C愛豊（T愛知）"  ,　"Nスルガ(TU静岡)"  ,"N浜松(T静岡)"  ,"N愛知（T愛知）"
   ];
   console.log(companiesInMinamikanto.length);
   const companiesInKinki = [
