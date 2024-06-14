@@ -183,11 +183,17 @@ function surveyAnalysis(){
   let innerSearchNumber = document.getElementById("inputboxSurvey").value;
   let arrayOfSearchNumber =  innerSearchNumber.split(' ');
   
+  const newCompanyCode = [];
   const newCompanyNameCode = [];
 for(const companyCodeNumber of arrayOfSearchNumber){
-      newCompanyNameCode.push(companyNameCode[companyCode.indexOf(companyCodeNumber)])
+  newCompanyCode.push(("0".repeat(4) + companyCodeNumber).slice(-5)); 
+ console.log(("0".repeat(4) + companyCodeNumber).slice(-5));
+ console.log(newCompanyCode);
   }
-  
+
+for(const newNumber of newCompanyCode){
+  newCompanyNameCode.push(companyNameCode[companyCode.indexOf( newNumber)])
+}
 
 for(const value of newCompanyNameCode){
     if(document.getElementById(value)){
